@@ -55,13 +55,12 @@ function getChangedFiles() {
 
 async function generateTests() {
   const rawChanged = getChangedFiles();
-
+  console.log(`🔍 Found ${rawChanged.length} changed files.`);
   const changedFiles = rawChanged
     .map(f => f.replace(/\\/g, "/"))
     .filter(
-      f => f.endsWith(".js") && (f.startsWith("src/") || f.includes("/src/"))
+      f => f.endsWith(".js")
     );
-
   if (changedFiles.length === 0) {
     console.log("ℹ️  No JS files changed under server/.");
     return;
