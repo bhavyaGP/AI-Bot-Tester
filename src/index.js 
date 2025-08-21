@@ -65,6 +65,11 @@ app.delete('/items/:id', validateId, (req, res) => {
   res.json(deletedItem[0]);
 });
 
+// Graceful shutdown
+process.on('SIGINT', () => {
+  console.log('\nServer shutting down gracefully...');
+  process.exit();
+});
 
 app.listen(PORT, () => {
   console.log(`✅ Server is running on http://localhost:${PORT}`);
