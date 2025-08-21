@@ -59,7 +59,7 @@ async function generateTests() {
   const changedFiles = rawChanged
     .map(f => f.replace(/\\/g, "/"))
     .filter(
-      f => f.endsWith(".js") && (f.startsWith("server/") || f.includes("/server/"))
+      f => f.endsWith(".js") && (f.startsWith("src/") || f.includes("/src/"))
     );
 
   if (changedFiles.length === 0) {
