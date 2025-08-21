@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "generate-tests": "node generate-tests.js"
+    "generate-tests": "node gen-tests.js"
   },
   "keywords": [],
   "author": "",
