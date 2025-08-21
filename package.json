@@ -1,0 +1,12 @@
+{
+  "name": "ai-bot-tester",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generate-tests": "node generate-tests.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
