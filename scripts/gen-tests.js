@@ -36,13 +36,13 @@ function getChangedFiles() {
 
     if (baseSha && headSha) {
       // In PR workflow
-      cmd = `git diff --name-only ${baseSha} ${headSha}`;
+      cmd = `git diff  ${baseSha} ${headSha}`;
     } else if (process.env.GITHUB_BASE_REF) {
       // Push workflow with base ref
-      cmd = `git diff --name-only origin/${process.env.GITHUB_BASE_REF} HEAD`;
+      cmd = `git diff  origin/${process.env.GITHUB_BASE_REF} HEAD`;
     } else {
       // Local fallback
-      cmd = `git diff --name-only HEAD~1 HEAD`;
+      cmd = `git diff  HEAD~1 HEAD`;
     }
 
     const out = execSync(cmd).toString().trim();
